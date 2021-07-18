@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Calorie Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--------------- Feature section ------------------>
+    <!--make the color of the jumbotron to be yellow-->
+    <div class="jumbotron bg-warning">
+      <div class="container">
+        <h1 class="display-4">🍽 Calorie Calculator</h1>
+        <p class="lead">
+          Find out your recommended calories requirement for the day with the
+          Calorie Calculator.
+        </p>
+      </div>
+    </div>
+    <!--------------- Calculator section -------------->
+
+    <div class="card mt-5">
+      <!--add one more images and apply the carousel-->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="images/bg-header.jpg"
+              style="width: 900px; height: 400px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="images/bg-footer.jpg"
+              style="width: 900px; height: 400px"
+            />
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <form>
+      <table class="table" style="border-spacing: 0rem">
+        <tr>
+          <div class="card mt-5">
+            <div class="card-body text-center">
+              <h4><span class="badge badge-primary">Question 1 of 5</span></h4>
+              <h4>What is your gender?</h4>
+              <div class="row justify-content-center">
+                <div class="column">
+                  <div class="card">
+                    <!--add the image for the female-->
+                    <img
+                      src="images/female.png"
+                      class="card-img-top"
+                      alt="female"
+                    />
+                  </div>
+                  <!--add input type="radio" for female. Make the name to be gender, make the id to be female-->
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    id="female"
+                  />Female
+                </div>
+
+                <div class="column">
+                  <div class="card">
+                    <!--add the image for the male-->
+                    <img
+                      src="images/male.png"
+                      class="card-img-top"
+                      alt="male"
+                    />
+                  </div>
+                  <!--add input type="radio" for male. Make the name to be gender, make the id to be male-->
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    id="male"
+                    checked="checked"
+                  />Male &nbsp &nbsp
+                </div>
+              </div>
+            </div>
+          </div>
+        </tr>
+
+        <!-- Q2 Weight -->
+        <tr>
+          <div class="card mt-5">
+            <div class="card-body text-center">
+              <h4><span class="badge badge-primary">Question 2 of 5</span></h4>
+              <h4>What is your weight?</h4>
+              <div class="form-group form-inline justify-content-center">
+                <input
+                  type="number"
+                  min="0"
+                  id="weight"
+                  class="form-control border-primary"
+                  style="width: 100px"
+                  name=""
+                  placeholder=""
+                />
+
+                <!--add <label> for the word kg-->
+                <label class="ml-1 text-primary">kg</label>
+              </div>
+              <div style="display: none" id="weightMessage">
+                [Please enter a valid number]
+              </div>
+            </div>
+
+            <p><em>eg: 50</em></p>
+          </div>
+        </tr>
+
+        <!-- Q3 Height -->
+        <tr>
+          <div class="card mt-5">
+            <div class="card-body text-center">
+              <h4><span class="badge badge-primary">Question 3 of 5</span></h4>
+              <h4>What is your height?</h4>
+              <div class="form-group form-inline justify-content-center">
+                <input
+                  type="number"
+                  min="0"
+                  id="height"
+                  class="form-control border-primary"
+                  style="width: 100px"
+                  name=""
+                  placeholder=""
+                />
+
+                <!--add <label> for the word cm-->
+                <label class="ml-1 text-primary">cm</label>
+              </div>
+              <div style="display: none" id="heightMessage">
+                [Please enter a valid number]
+              </div>
+            </div>
+
+            <p><em>eg: 150</em></p>
+          </div>
+        </tr>
+
+        <!-- Q4 Age -->
+        <tr>
+          <div class="card mt-5">
+            <div class="card-body text-center">
+              <h4><span class="badge badge-primary">Question 4 of 5</span></h4>
+              <h4>What is your age?</h4>
+              <div class="container">
+                <div class="row justify-content-center mx-5">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">10–17</h5>
+                        <input
+                          type="radio"
+                          name="age"
+                          value="teenager"
+                          id="teenager"
+                          checked="checked"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">18–29</h5>
+                        <input
+                          type="radio"
+                          name="age"
+                          value="youngAdult"
+                          id="youngAdult"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center mx-5">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">30–59</h5>
+                        <input
+                          type="radio"
+                          name="age"
+                          value="adult"
+                          id="adult"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">60 and above</h5>
+                        <input
+                          type="radio"
+                          name="age"
+                          value="elderly"
+                          id="elderly"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tr>
+
+        <tr>
+          <!-- Q5 Activity Level -->
+          <div class="card mt-5">
+            <div class="card-body text-center">
+              <h4><span class="badge badge-primary">Question 5 of 5</span></h4>
+              <h4>
+                Which matches your level of physical activity for most days of
+                the week?
+              </h4>
+              <select
+                class="custom-select custom-select-sm border-primary"
+                style="width: 150px; height: 40px; margin-top: 12px"
+              >
+                <option value="0" class="choice">Choose</option>
+                <!--make <option value> for Sedentary. the value have to be 1. the name of the class is sedentary-->
+                <!--make <option value> for Lightly Active. the value have to be 2. the name of the class is light-->
+                <!--make <option value> for Moderately Active. the value have to be 3. the name of the class is moderate-->
+                <!--make <option value> for Very Active. the value have to be 4. the name of the class is active-->
+                <option value="1" class="sedentary">Sedentary</option>
+                <option value="2" class="light">Lightly Active</option>
+                <option value="3" class="moderate">Moderately Active</option>
+                <option value="4" class="active">Very Active</option>
+              </select>
+
+              <ul class="text-left m-5">
+                <li>
+                  Sedentary — I mostly sit at desk and engage in very little
+                  exercise or chores.
+                </li>
+                <li>
+                  Lightly active — I do chores and go on long walks/engage in
+                  exercise at least 1 to 3 days in a week.
+                </li>
+                <li>
+                  Moderately active — I move a lot during the day and workout
+                  (moderate effort) at least 3 to 5 days in a week.
+                </li>
+                <li>
+                  Very active — I play sports or engage in vigorous exercise on
+                  most days.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </tr>
+      </table>
+    </form>
+
+    <!-- Result Button-->
+    <div class="card mt-5">
+      <div class="card-body text-center">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg font-weight-bold"
+          style="margin: auto; margin-bottom: 25px; border-radius: 25px"
+        >
+          GET RESULT
+        </button>
+      </div>
+    </div>
+
+    <!-- Overall Result -->
+    <div
+      id="Final"
+      class="card text-center my-5"
+      style="
+        max-width: 100rem;
+        margin: auto;
+        border: 6px solid #ff6d00;
+        width: 50%;
+        margin-top: 45px;
+        background-color: #ff6d00;
+        border-radius: 10px;
+        color: #ff6d00;
+        display: none;
+        margin-bottom: 30px;
+      "
+    >
+      <h1 class="display-5">RESULT</h1>
+      <p>Your daily calorie intake requirement is:</p>
+
+      <div id="calorie" class="kcal text-center">&nbsp</div>
+      <p style="font-weight: bold">kcal</p>
+      <table style="margin-top: 15px">
+        <tr>
+          <td class="smallText hideLoss" style="font-weight: bold">
+            Weight loss
+            <br />
+            <p
+              class="hideLoss"
+              style="font-size: small; color: #888; font-weight: lighter"
+            >
+              0.5 kg/week
+            </p>
+
+            <div id="loss" class="kcal">&nbsp</div>
+            <p>kcal</p>
+          </td>
+
+          <td class="smallText showGain" style="font-weight: bold">
+            Weight gain
+            <br />
+            <p
+              class="showGain"
+              style="font-size: small; color: #888; font-weight: lighter"
+            >
+              0.5 kg/week
+            </p>
+            <div id="gain" class="kcal">&nbsp</div>
+            <p>kcal</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <footer class="bg-light pt-5">
+      <div class="container mt-5">
+        <div class="row justify-content-center mx-5">
+          <div class="card text-white bg-success mb-3 text-center">
+            <!--add the image for the footer-->
+            <img
+              src="images/bg-footer.jpg"
+              class="card-img-top card-img-bg"
+              alt="calories-bg"
+            />
+            <div class="card-header font-weight-bold">
+              How to eat my calories
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                A healthy plate consists of ¼ plate whole grains (brown rice &
+                wholemeal bread), ½ plate fruit & vegetables, ¼ plate protein.
+                Each meal through the week should have some variations of meat &
+                vegetables.
+              </p>
+              <p class="font-weight-bold">
+                ⭐️ A good diet doesn’t keep you hungry, make you sick or avoid
+                a food group. ⭐️
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mx-5">
+          <div class="card text-white bg-danger mb-5 text-center">
+            <div class="card-header font-weight-bold">DISCLAIMER</div>
+            <div class="card-body">
+              <p class="card-text">
+                Always consult a professional healthcare provider such as your
+                local dietitian, fully licensed nutritionist or any qualified
+                health professional with any questions you may have regarding
+                your diet, health or a medical condition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
